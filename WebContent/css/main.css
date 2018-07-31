@@ -1,0 +1,24 @@
+div.orbit-container
+{
+	height: 20%; /* Your own height */
+	width: 100%; /* Your own width */
+}
+ul.orbit-ul, li.orbit-item
+{
+  height: 100%px; /* Your own height */
+}
+li.orbit-item-1
+{
+  background: url(http://placehold.it/400x100/ff0000&text=+) no-repeat center;
+  background-size: cover;
+}
+li.orbit-item-2
+{
+  background: url(http://placehold.it/400x100/00ff00&text=+) no-repeat center;
+  background-size: cover;
+}
+li.orbit-item-3
+{
+  background: url(http://placehold.it/400x100/0000ff&text=+) no-repeat center;
+  background-size: cover;
+}

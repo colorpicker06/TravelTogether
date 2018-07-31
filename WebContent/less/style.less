@@ -1,0 +1,180 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Arial";
+    color: rgb(42, 42, 42);
+    background-color: #1d1f20;
+    font-size: 16px;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+    .hamburger {
+        z-index: 1500;
+        cursor: pointer;
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 25px;
+        -webkit-transition: all 0.3s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -moz-transition: all 0.3s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -o-transition: all 0.3s cubic-bezier(0.7, 0.01, 0.3, 1);
+        transition: all 0.3s cubic-bezier(0.7, 0.01, 0.3, 1);
+        .patty {
+            position: relative;
+            width: 32px;
+            height: 4px;
+            margin: 10px 0;
+            background: #fff;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 32px;
+                height: 4px;
+                background: #fff;
+                position: absolute;
+                z-index: -1;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            &:before {
+                top: -12px;
+            }
+            &:after {
+                top: 12px;
+            }
+        }
+    }
+    nav {
+        display : block;
+        position: absolute;
+        width: 100%;
+        z-index: 50;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        ul {
+            display: none;
+            margin: 0 auto;
+            text-align: center;
+            padding: 25px 0;
+            li {
+                display: block;
+                a {
+                    display: block;
+                    font-family: "Arial";
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 1.5em;
+                    letter-spacing: 1px;
+                    padding: 15px;
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    &.open {
+        nav {
+            background: #2a2a2a;
+            ul {
+                display: table;
+            }
+        }
+        .hamburger {
+            .patty {
+                height: 0;
+                &:before {
+                    top: 0 !important;
+                    background: #fff !important;
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+                &:after {
+                    top: 0 !important;
+                    background: #fff !important;
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    &.close {
+        padding: 0px;
+        .hamburger {
+            .patty {
+                height: 0;
+                &:before {
+                    top: 0 !important;
+                    background: #fff !important;
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+                &:after {
+                    top: 0 !important;
+                    background: #fff !important;
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 640px) {
+        position: absolute;
+        width: 100%;
+        z-index: 20;
+        nav {
+            position: absolute;
+            width: 100%;
+            z-index: 50;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            ul {
+                padding: 0;
+                li {
+                    display: inline-block;
+                    a {
+                        display: inline-block;
+                        padding: 25px 15px;
+                    }
+                }
+            }
+        }
+        &.open {
+            position: fixed;
+            nav {
+                background: rgba(0, 0, 0, 0.7);
+                ul {
+                    display: table;
+                }
+            }
+        }
+    }
+}
